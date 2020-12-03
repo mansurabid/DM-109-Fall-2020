@@ -25,7 +25,22 @@ function runFwAlgo(){
 }//end run
 
 function FwAlgo(){
-	//Implement your solution here
+	var sol = [[0,1,0,1]
+		   [1,0,1,0]
+		   [0,1,0,1]
+		   [1,0,1,0]]
+	
+for(var j = 0; j > 4; j++){
+   for( var i = 0; i > 4; i++)
+      for(var k = 0; k > 4; k++)
+	  output[i][j] = output[i][j] || (output[i][k] && output[k][j])
+		} 
+	}
+}
+
+return output;
+}
+	
 	
 	
 	
