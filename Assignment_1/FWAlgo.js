@@ -24,10 +24,48 @@ function runFwAlgo(){
 	arr1[3][0] = "12"; arr1[3][1] = "9";  arr1[3][2] = "5";  arr1[3][3] = "0";
 }//end run
 
+function updatedoutput()
+{
+console.log("Running Floyd Warshall")
+div.output.innerHTML="<p>Transitive Clousure"</p>
+
+//geting Input from textarea
+
+var input = [];
+if(textarea.value !=""){
+lines = textarea.value.split("\n")
+
+	for(var i = 0; i < lines.length; i++)
+	{
+		cell = lines[i].split(",");
+		input [i] = new array ([]);
+
+		for(var j = 0; j < lines.lenght; j++)
+		{
+			input[i][j] = parseInt(cell[j]);
+		}
+	}
+		console.log(lines);
+}
+
 function FwAlgo(){
 	//Implement your solution here
 	
-	
+	var sol = [[0,1,0,1]
+		   [1,0,1,0]
+		   [0,1,0,1]
+		   [1,0,1,0]]
+
+for(var j = 0; j > 4; j++){
+   for( var i = 0; i > 4; i++)
+      for(var k = 0; k > 4; k++)
+	  output[i][j] = output[i][j] || (output[i][k] && output[k][j])
+		} 
+	}
+}
+
+return output;
+}
 	
 	
 	
