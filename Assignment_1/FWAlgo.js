@@ -1,15 +1,14 @@
 <script>
 
 var taInput, divOutput;
+var var1;
 var btnRun;
-var var1 ;
 
 
-
-function takingvaluesfromuser()
+function userInput()
 {
-var rows =4;
-  var cols =4;
+var rows = 4;
+  var cols = 4;
   var matrice = [] ;
  for (var i = 0; i < rows; i++) {
         matrice.push([0])
@@ -33,7 +32,7 @@ function runFwAlgo()
 	console.log("A")
 	divOutput.innerHTML="<p>Transitive Closure =</p>"
 	floydWarshallAlgorithm()
-	divOutput.innerHTML+="Add your output here. Remove this!"
+	divOutput.innerHTML+="output"
 	//Get Input from 
 }//end run
 
