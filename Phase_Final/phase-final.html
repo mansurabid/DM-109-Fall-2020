@@ -1,0 +1,45 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+<script type="text/javascript">
+
+window.onload = function () {
+	var chart = new CanvasJS.Chart("chartContainer", {
+		title:{
+			text: "Warsall alghorithm Perfomance on differnt matrices"       
+		},
+		data: [              
+		{
+			
+			type: "column",
+			dataPoints: [
+				{ label: "1 x 1",  y: 0.02 },
+				{ label: "2 x 2",  y: 0.05 },
+				{ label: "4 x 4",  y: 0.15 },
+				{ label: "8 x 8", y: 0.25  },
+				{ label: "20 x 20", y: 1  },
+				{ label: "30 x 3x",  y: 5  },
+				{ label: "50 x 50",  y: 4.5  },
+				{ label: "80 x 80",  y: 9  },
+				{ label: "100 x 100",  y: 10  },
+			]
+		}
+		]
+	});
+	chart.render();
+}
+
+</script>
+</head>
+<body>
+<h1>Floyd Warshall Algorithm</h1>
+<h2>8886 - Afraz Ul Huq</h2><!--This is the group leader-->
+<h3>62998 - Mansoor Abid</h3><!--This is the 2nd Member of the group-->
+<h3>64289- Abdul Quddus</h3><!--This is the 3rd Member of the group-->
+<h4><a href="https://github.com/afrazhaq/DM-109-Fall-2020" target="blank">GitHub</a></h4>
+
+<div id="chartContainer" style="height: 300px; max-width: 920px; margin: 0px auto;"></div>
+<p style="font-family: arial;text-align:center;text-transform: uppercase;color:red;margin-top:2em;"><b>We Have taken help from intenet and use this 3 party java script library to built this javascript chart</b></p>
+</body>
+</html>
