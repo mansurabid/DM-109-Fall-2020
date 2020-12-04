@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+  
+<head>
+  
+<title> Warshall Algorithm</title>
+<meta charset="utf-8">
+<script type="text/javascript" src="FWAlgo.js"></script>
+  
+</head>
+  
+<body style="font-size: 16pt;">
+  
+<h1>Floyd Warshall Algorithm</h1>
+<h2>8886 - Afraz Ul Huq</h2>
+<h3>62998 - Mansoor Abid</h3>
+<h3>64289- Abdul Quddus</h3>
+  
+<h4><a href="https://github.com/afrazhaq/DM-109-Fall-2020" target="blank">GitHub</a></h4>
+<button id="btnRun1" onclick="runFwAlgo()"> Run</button>
+</p>
+
+<table border="1px">
+
+<tr><td> <h6>Value of N*N</h6>   </td>
+<td> <h6>Speed in m/s</h6>  </td></tr>
+
+<tr>
+  
+<td>4*4</td>
+<td>0.149</td>
+</tr>
+  
+<tr>
+<td>5*5</td>
+<td>0.239</td>
+</tr>
+  
+<tr>
+<td>6*6</td>
+<td>0.185</td>
+</tr>
+  
+<tr>
+<td>7*7</td>
+<td>0.190</td>
+</tr>
+  
+<tr>
+<td>8*8</td>
+<td>0.255</td>
+</tr>
+  
+<tr>
+<td>9*9</td>
+<td>0.259</td>
+</tr>
+  
+<tr>
+<td>10*10</td>
+<td>0.284</td>
+</tr>
+  
+<tr>
+<td>20*20</td>
+<td>1.015</td>
+</tr>
+  
+<tr>
+<td>30*30</td>
+<td>5.515</td>
+</tr>
+  
+<tr>
+<td>40*40</td>
+<td>4.710</td>
+</tr>
+  
+<tr>
+<td>50*50</td>
+<td>4.895</td>
+</tr>
+  
+<tr>
+<td>60*60</td>
+<td>5.415</td>
+</tr>
+  
+<tr>
+<td>70*70</td>
+<td>5.919</td>
+</tr>
+  
+<tr>
+<td>80*80</td>
+<td>9.214</td>
+</tr>
+  
+<tr>
+<td>90*90</td>
+<td>9.064</td>
+</tr>
+  
+<tr>
+<td>100*100</td>
+<td>9.949</td>
+</tr>
+</table>
+
+<div id="divOutput" style="border: 2px;padding: 10px 10px 10px 10px;">
+
+<script type="text/javascript">
+
+var taInput, divOutput;
+var btnRun;
+
+window.onload = function() {
+console.log(""Build Successful"");
+taInput = document.getElementById('txtInput');
+divOutput = document.getElementById('divOutput');
+btnRun = document.getElementById('btnRun');
+} //end window.onload
+
+function runFwAlgo(){
+console.log("Algorithm is running...")
+divOutput.innerHTML="<p>Transitive Closure of the Relation Is:</p>"
+
+arr = randomCreationofarray(1210000);
+
+var matrice = [];
+
+matrice = creationof2darray(arr,1100)
+output = FwAlgo(matrice);
+divOutput.innerHTML = output ;
+
+}	
+function creationof2darray(array, size) {
+var matrice = [];
+for(var i = 0; i < array.length; i += size) {
+matrice.push(array.slice(i, i + size));
+}
+return matrice;
+}
+
+//end run
+
+function FwAlgo(matrice){
+var m = [];
+m = matrice;
+
+var t0 = performance.now();
+console.log(t0);
+
+for (var i = 0; i < m.length;  i++) 
+{
+
+for (var j = 0; j < m.length;  j++)
+{
+
+for (var k = 0; k < m.length;  k++)
+{
+
+m[j][k] = m[j][k] || (m[j][i] && m[i][k]);
+
+}
+}
+}
+var t1 = performance.now();
+console.log(t1);
+console.log(t1 - t0);
+
+return (t1 - t0) ;
+}//end sol1
+
+function randomCreationofarray(size)
+{
+var arr = [];
+
+  for (var i=0;i<size;i++)
+{
+arr.push(Math.round(Math.random()))
+}
+return arr
+}
+</script>
+
+</div>
+</body>
+</html>
