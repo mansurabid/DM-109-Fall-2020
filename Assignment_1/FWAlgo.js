@@ -2,7 +2,7 @@
 
 var taInput, divOutput;
 var btnRun;
-var geek ;
+var var1 ;
 
 
 
@@ -22,7 +22,7 @@ var rows =4;
 }
 window.onload = function() 
 {
-	console.log("Hooray! Its working");
+	console.log("Build Successful");
 	taInput = document.getElementById('txtInput');
 	divOutput = document.getElementById('divOutput');
 	btnRun = document.getElementById('btnRun');
@@ -30,8 +30,8 @@ window.onload = function()
 
 function runFwAlgo()
 {
-	console.log("Running Floyd Warshall")
-	divOutput.innerHTML="<p>Transitive Closure of the Relation Is:</p>"
+	console.log("A")
+	divOutput.innerHTML="<p>Transitive Closure =</p>"
 	floydWarshallAlgorithm()
 	divOutput.innerHTML+="Add your output here. Remove this!"
 	//Get Input from 
